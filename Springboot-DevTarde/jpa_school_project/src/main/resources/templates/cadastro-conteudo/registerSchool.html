@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URCA - Cadastrar de Conteúdo</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" th:href="@{css/fontStyle.css}">
+    <link rel="stylesheet" th:href="@{css/styleIndex.css}">
+    <link rel="stylesheet" th:href="@{css/styleCadastroEscola.css}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Realizar cadastro de conteúdos</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="cadastro-conteudo" method="post">
+                                <div class="form-group-cadastro-top">
+                                    <div class="form-group-part-1">
+                                        <div class="div-form-group-cursos" id="div-element-id">
+                                            <div class="form-group">
+                                                <input type="number" min="0" class="form-control form-control-id"
+                                                    placeholder="ID" name="id_curso" id="input-id-element">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-name"
+                                                    placeholder="Curso" name="nome_curso" id="input-name-element">
+                                            </div>
+                                        </div>
+                                        <!--------------------------------------------------------------------------------------------->
+                                    </div>
+                                    <div class="form-group-part-2">
+                                        <label for="btn-radio" class="label-radio">Cadastrar:</label>
+                                        <div class="form-group-radio">
+                                            <span class="btn-radio"><input type="radio" name="tipoConteudo" value="0"
+                                                    checked>
+                                                Curso</span>
+                                            <span class="btn-radio"><input type="radio" name="tipoConteudo" value="1">
+                                                Turma</span>
+                                            <span class="btn-radio"><input type="radio" name="tipoConteudo" value="2">
+                                                Disciplinas</span>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-block btn-register">Cadastrar</button>
+                                    </div>
+                                </div>
+                                <div class="form-group-cadastro-bottom">
+                                    <div class="div-content-group">
+                                        <div class="div-listar-cursos" id="div-listar-cursos-id" >
+                                            <div th:replace="~{fragmentos/listar-cursos :: table-curso}"></div>
+                                        </div>
+                                        <div class="div-listar-turmas" id="div-listar-turmas-id" th:each="turma : ${turmas}">
+                                            <div th:replace="~{fragmentos/listar-turmas :: table-turma}"></div>
+                                        </div>
+                                        <div class="div-listar-disc" id="div-listar-disc-id" th:each="disciplina : ${disciplinas}">
+                                            <div th:replace="~{fragmentos/listar-disciplinas :: table-disc}"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:src="@{js/scriptCadastroConteudo.js}"></script>
+
+</html>

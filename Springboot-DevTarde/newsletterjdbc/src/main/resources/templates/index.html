@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org/">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{style.css}">
+  <title>Newsletter</title>
+</head>
+
+<body>
+
+  <div class="newsletter-container">
+    <h2>Assine nossa Newsletter</h2>
+    <form id="newsletterForm" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="Informe o seu Email">
+      <button type="submit">Inscrever-se</button>
+    </form>
+      <span th:text="${msg}"></span>
+
+  </div>
+
+  <script src="../static/script.js"></script>
+</body>
+
+</html>

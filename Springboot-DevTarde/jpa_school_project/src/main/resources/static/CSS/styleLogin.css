@@ -1,0 +1,84 @@
+body {
+    background-color: #f8f9fa;
+}
+
+:root {
+    --verde_padrao: rgb(8, 112, 8);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-container {
+    margin-top: 100px;
+}
+
+.form-control-cpf,
+.form-control-senha {
+    border-radius: 5px;
+    border: 2px solid rgb(54, 54, 54);
+
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    width: 50vh;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center;
+    flex-direction: column; */
+}
+
+.card-header {
+    background-color: var(--verde_padrao);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-header h3 {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    padding: 10px 20px;
+}
+
+.btn-login {
+    background-color: #333;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: green;
+}
+
+form a {
+    text-decoration: none;
+    color: #333;
+}

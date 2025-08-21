@@ -1,0 +1,222 @@
+@import url('https://fonts.cdnfonts.com/css/digital-numbers');
+
+body {
+    background-image: url(../img/background-test.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* animação de fade-in */
+
+.div-fade-in{
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    z-index: 2;
+    background-color: black;
+    animation: fade-in 0.75s ease-in;
+    display: none;
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* ---------------------------- */
+
+section {
+    margin-top: 7%;
+    margin-right: 4.3vw;
+    width: 49.5%;
+}
+
+.div-interaction-center {
+    /* background-color: rgb(255, 0, 0); */
+    /* opacity: 0.5; */
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* posição dos elementos*/
+
+.elevator-1{
+    width: 40vh;
+    height: 65vh;
+    /* background-color: yellow; */
+    margin-left: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.elevator-button{
+    width: 5vh;
+    height: 8vh;
+    /* background-color: green; */
+    margin: 7vh;
+    margin-top: 103px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer ;
+}
+
+.elevator-2{
+    width: 40vh;
+    height: 65vh;
+    /* background-color: yellow; */
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------------------- */
+/* posição dos elementos interativos */
+
+.elevator-door-1{
+    /* background-color: rgb(211, 0, 0); */
+}
+
+.elevator-door-2{
+    /* background-color: rgb(0, 42, 211); */
+}
+
+.elevator-position-number-1, .elevator-position-number-2{
+    width: 7.5vh;
+    height: 2.6vh;
+    /* background-color: rgb(0, 208, 255); */
+    margin-right: 0vh;
+    margin-top: 15px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.elevator-position-number-1 .number-1, .elevator-position-number-2 .number-2{
+    padding-right: 2.3vh;
+}
+
+.elevator-position-number-1 .number-1 span, .elevator-position-number-2 .number-2 span{
+    display: flex;
+    align-items: center;
+    color:#00FF30;
+    font-family: 'Digital Numbers', sans-serif;
+                                                
+}
+
+.elevator-position-number-1 .arrow-up-1, .elevator-position-number-2 .arrow-up-2{
+    display: flex;
+    align-items: center;
+}
+
+.elevator-position-number-1 .arrow-up-1 img, .elevator-position-number-2 .arrow-up-2 img{
+    height: 2vh;
+    width: 1.5vh;
+}
+
+.elevator-position-number-2{
+    margin-right: -0.5vh;
+    margin-top: 15px;
+}
+
+.elevator-door-1, .elevator-door-2{
+    margin-top: 5vh;
+    width: 37vh;
+    height: 56vh;
+    cursor: pointer;
+    display: none;
+}
+
+.door-1, .door-2{
+    margin-top: 5vh;
+    width: 37vh;
+    height: 56vh;
+    /* background-color: gray; */
+    display: flex;
+    overflow: hidden;
+
+}
+
+.door-1 img, .door-2 img{
+    width: 100%;
+    height: 100%;
+    animation: ease-in;
+}
+
+#door-left-1,#door-right-1,#door-left-2, #door-left-2{
+    animation: 2s ease-in;
+}
+
+
+.abrirDireito{
+    animation: doorOpenRight 2s ease-in;
+}
+
+.abrirEsquerdo{
+    animation: doorOpenLeft 2s ease-in;
+}
+
+.fecharDireito{
+    animation: doorCloseRight 2s ease-in;
+}
+
+.fecharEsquerdo{
+    animation: doorCloseLeft 2s ease-in;
+}
+
+
+@keyframes doorOpenRight {
+    from{
+        transform: translateX(0vh);
+    }
+    to{
+        transform: translateX(50vh);
+    }
+}
+
+@keyframes doorOpenLeft {
+    from{
+        transform: translateX(0vh);
+    }
+    to{
+        transform: translateX(-50vh);
+    }
+}
+
+@keyframes doorCloseRight {
+    from{
+        transform: translateX(50vh);
+    }
+    to{
+        transform: translateX(0vh);
+    }
+}
+
+@keyframes doorCloseLeft {
+    from{
+
+    }
+    to{
+        transform: translateX(0vh)
+    }
+}
+
+/* ---------------------------- */

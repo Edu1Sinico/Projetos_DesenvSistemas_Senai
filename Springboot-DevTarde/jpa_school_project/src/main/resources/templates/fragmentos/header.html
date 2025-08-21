@@ -1,0 +1,28 @@
+<header>
+    <div class="contato-div">
+        <div class="div-links-contato">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+
+    <div class="nav-bar-div">
+        <nav>
+            <div class="logo-header"><img th:src="@{assets/URCA-LOGO.png}" alt="logo"></div>
+            <a href="/home">Home</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/contato">Contato</a>
+            <div class="login-cad-div" th:if="${session.usuarioLogado == null or session.usuarioLogado == false}">
+                <a href="/login">login</a>
+            </div>
+            <div th:if="${session.usuarioLogado == true}" class="div-logon">
+                <p>Olá, <span th:text="${nomeUsuario}"></span>!</p>
+                <form action="logout-user" method="post">
+                    <button type="submit">Sair</button>
+                </form>
+            </div>
+            <div class="search-bar-div"><input type="text" placeholder="Pesquisar"></div>
+        </nav>
+    </div>
+</header>

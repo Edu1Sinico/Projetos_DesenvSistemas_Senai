@@ -1,0 +1,35 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "JpaSchoolProjectApplication",
+            "request": "launch",
+            "mainClass": "webapp.jpa_school_project.JpaSchoolProjectApplication",
+            "projectName": "jpa_school_project"
+        },
+        {
+            "type": "java",
+            "name": "RhappJpaApplication",
+            "request": "launch",
+            "mainClass": "webapp.rhapp_jpa.RhappJpaApplication",
+            "projectName": "rhapp_jpa"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "HelloworldApplication",
+            "request": "launch",
+            "mainClass": "webapp.helloworld.HelloworldApplication",
+            "projectName": "helloworld"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<div th:fragment="select-curso">
+    <select name="curso" id="curso_id">
+        <option value="null">Escolha o Curso</option>
+        <option th:each="curso : ${cursos}" th:value="${curso.id}" th:text="${curso.nome_curso}"></option>
+    </select>
+</div>
+
+<div th:fragment="table-curso">
+    <table class="listar-cursos-table">
+        <tr>
+            <th>ID do Curso</th>
+            <th>Nome do Curso</th>
+        </tr>
+        <tr th:each="curso : ${cursos}">
+            <td><span th:text="${curso.id_curso}"></span></td>
+            <td><span th:text="${curso.nome_curso}"></span></td>
+        </tr>
+    </table>
+</div>

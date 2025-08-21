@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URCA - Cadastrar de Usuários</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" th:href="@{css/styleIndex.css}">
+    <link rel="stylesheet" th:href="@{css/styleCadastro.css}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Realizar cadastro de usuários</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="cadastro-user" method="post">
+                                <div class="form-group-cadastro-top">
+                                    <div class="form-group-part-1">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-cpf" placeholder="CPF"
+                                                name="cpf">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-name" placeholder="Nome"
+                                                name="nome">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-email"
+                                                placeholder="Email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group-part-2">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-senha"
+                                                placeholder="Senha" name="senha">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-senha"
+                                                placeholder="Confirmar Senha">
+                                        </div>
+                                        <label for="btn-radio" class="label-radio">Tipo de Usuário:</label>
+                                        <div class="form-group-radio">
+                                            <span class="btn-radio"><input type="radio" name="tipoUser" value="0"
+                                                    checked>
+                                                Administrador</span>
+                                            <span class="btn-radio"><input type="radio" name="tipoUser" value="1">
+                                                Professor</span>
+                                            <span class="btn-radio"><input type="radio" name="tipoUser" value="2"
+                                                    action="listar-cursos">
+                                                Aluno</span>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-block btn-register"><i
+                                                class="fas fa-user-plus"></i> Cadastrar</button>
+                                    </div>
+                                </div>
+                                <div class="form-group-cadastro-bottom">
+
+                                    <div class="div-user-group">
+                                        <label for="secao-user" class="user-group-title">
+                                            <h2 id="secao-user-title">ALUNO</h2>
+                                        </label>
+                                        <section class="section-user-group" name="secao-user">
+                                            <div class="div-user-aluno-group" id="user-aluno-group-id">
+                                                <!-- Deve ser ativado com o radio button de aluno -->
+                                                <div class="div-aluno-disciplinas">
+
+                                                    <div class="disciplinas-medio">
+                                                        <h4>Disciplinas do Ensino Médio</h4>
+                                                        <span>
+                                                            <input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="1">
+                                                            Matemática</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="2">
+                                                            Português</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="3">
+                                                            Física</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="4">
+                                                            Química</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="5">
+                                                            Biologia</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="6">
+                                                            História</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="7">
+                                                            Geográfia</span>
+                                                        <span><input type="checkbox" name="disciplina" id="combo-disc"
+                                                                value="8">
+                                                            Inglês</span>
+                                                    </div>
+
+                                                    <div class="disciplinas-tecnico">
+                                                        <h4>Disciplinas do Curso Técnico</h4>
+                                                        <div>
+                                                            <div class="div-curso-enfermagem" id="curso_1">
+
+                                                            </div>
+                                                            <div class="div-curso-mecanica" id="curso_2">
+
+                                                            </div>
+                                                            <div class="div-curso-desenvimento-de-sistemas"
+                                                                id="curso_3">
+
+                                                            </div>
+                                                            <div class="div-curso-adminstracao" id="curso_4">
+
+                                                            </div>
+                                                            <div class="div-curso-eletrica" id="curso_5">
+
+                                                            </div>
+                                                            <div class="div-curso-culinaria" id="curso_6">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="div-aluno-curso-turma">
+                                                        <div class="div-aluno-curso">
+                                                            <label for="curso">Curso:</label>
+                                                            <div
+                                                                th:replace="fragmentos/listar-cursos :: select-curso">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="div-aluno-turma">
+                                                            <label for="turma">Turma:</label>
+                                                            <div
+                                                                th:replace="fragmentos/listar-turmas :: select-turma">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="div-user-prof-group" id="user-prof-group-id">
+
+                                                </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script th:src="@{js/scriptCadastro.js}"></script>
+
+</html>

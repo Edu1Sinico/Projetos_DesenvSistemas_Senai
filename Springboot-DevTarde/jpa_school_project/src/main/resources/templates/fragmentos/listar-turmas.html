@@ -1,0 +1,19 @@
+<div th:fragment="select-turma">
+    <select name="turma" id="turma_id">
+        <option value="null">Escolha a Turma</option>
+        <option th:each="turma : ${turmas}" th:value="${turma.id}" th:text="${turma.ano_turma}"></option>
+    </select>
+</div>
+
+<div th:fragment="table-turma">
+    <table class="listar-turma-table">
+        <tr>
+            <th>ID da Turma</th>
+            <th>Nome da Turma</th>
+        </tr>
+        <tr th:each="turma : ${turmas}">
+            <td><span th:text="${turma.id_turma}"></span></td>
+            <td><span th:text="${turma.ano_turma}"></span></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,12 @@
+<div th:fragment="table-disc">
+    <table class="listar-disc-table">
+        <tr>
+            <th>ID da Disciplina</th>
+            <th>Nome da Disciplina</th>
+        </tr>
+        <tr th:each="disciplina : ${disciplinas}">
+            <td><span th:text="${disciplina.id_disciplina}"></span></td>
+            <td><span th:text="${disciplina.nome_disciplina}"></span></td>
+        </tr>
+    </table>
+</div>
