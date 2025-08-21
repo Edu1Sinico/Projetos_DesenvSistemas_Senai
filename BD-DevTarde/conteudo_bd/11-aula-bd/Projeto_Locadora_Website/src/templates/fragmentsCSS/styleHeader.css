@@ -1,0 +1,113 @@
+.header-fragment{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-section-menu{
+   width: 50vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.header-section-menu .div-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.div-contact{
+    width: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.div-contact a{
+    color: black;
+}
+
+.div-menu-contact-login-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vh;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.div-btn-login-register{
+    display: flex;
+}
+
+.div-btn-login-register a{
+    text-decoration: none;
+}
+.div-btn-login-register .div-login button, .div-register button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    margin: 5px;
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid black;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.div-btn-login-register .div-login button:hover, .div-register button:hover{
+    background-color: black;
+    color: white;
+}
+
+.nav-links{
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links ul{
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-links ul li{
+    list-style: none;
+}
+
+.nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links ul li a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: black;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-links ul li a:hover::after{
+    width: 100%;
+}

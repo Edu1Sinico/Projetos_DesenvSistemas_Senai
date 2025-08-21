@@ -1,0 +1,94 @@
+/*---------------- Header ----------------*/
+
+body{
+    margin: 0;
+    background-color: slategray;
+}
+
+.nav{
+    display: flex;
+    background-color: aliceblue;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav img{
+    height: 70px;
+    padding-left: 10px;
+}
+
+.nav .linkMenu{
+    text-decoration: none;
+    font-size: 20px; 
+    color: black;   
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav .menuHanb{
+    display: none;
+}
+
+.nav .menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;    
+    color: orange;   
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*----------------------------------------*/
+/*---------------- Section ---------------*/
+
+.p1{
+    background-color:rgb(124, 142, 160) ;
+    border-radius: 35px;
+    padding: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding-bottom: 20%;
+    margin-bottom: 50px;
+}
+
+/* .p1 .imagem{ 
+    margin-right: 30px;
+    padding: 3px;
+    border-radius: 15px;
+    background-color: rgb(138, 158, 179);
+}*/
+
+.p1 .imagem img{
+    display: flex;
+    width: 365px;
+    border-radius: 15px;
+}
+
+.p1 .info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(138, 158, 179); 
+    border-radius: 15px;
+}
+
+.p1 .info h1{
+    display: flex;
+    font-size: 30px;
+}
+
+/*----------------------------------------*/
+/*------------- Media Query --------------*/
+
+@media screen  and (max-width: 768px)
+{ 
+    .p1 { margin-left: auto; margin-right: auto; flex-direction: column; align-items: center;}
+    .p1 .imagem img{width: 250px; height: 250px;}
+    .p1 .info{font-size: 100%; text-align: center; margin-top: 20px}
+    .p1 .info h1{font-size: 100%; align-self: center;}
+}
+/*----------------------------------------*/
