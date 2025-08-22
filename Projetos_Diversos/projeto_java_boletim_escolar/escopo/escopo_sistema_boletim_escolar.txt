@@ -1,0 +1,57 @@
+---------===== Sistema de Boletim Escolar =====---------
+
+1.Tema: Sistema de Boletim Escolar.
+
+--------------------------------------------------------------
+
+2.Objetivo: Realizar um sistema capaz de atribuir notas e calcular a média
+para os alunos.
+
+--------------------------------------------------------------
+
+3.Tabelas:
+
+Professor:
+	∘ cpf (String PK);
+	∘ nome (String);
+	∘ idade (String);
+	∘ email (String);
+	∘ senha (String);
+	∘ especializacao (String);
+
+Aluno:
+	∘ ra (String PK);
+	∘ cpf (String);
+	∘ nome (String);
+	∘ idade (String);
+	∘ email (String);
+	∘ senha (String);
+	∘ turma (String);
+
+Matéria:
+	∘ id (Int PK);
+	∘ nomeMateria (String);
+	∘ nota1 (Double);
+	∘ nota2 (Double);
+	∘ nota3 (Double);
+	∘ media (Double);
+	∘ cpfProfessor (String FK de Professor(cpf));
+	∘ raAluno (String FK de Aluno(cpf));
+
+--------------------------------------------------------------
+
+4.Funcionalidades:
+
+→ Professor: O professor será capaz de aplicar as notas para os alunos específicos com base no RA.
+
+	∘ Ele poderá aplicar 3 notas no qual existirá um método de realizar a média automáticamente;
+	∘ Será possível também os métodos CRUD das notas (Aplicar, Editar, Excluir e Limpar);
+	∘ O professor só poderá editar as notas dos alunos com base na sua matéria de especialidade.
+
+→ Aluno: O aluno poderá visualizar suas informações pessoas e acadêmicas.
+
+	∘ O aluno poderá filtrar por matéria.
+
+→ Admin: O admin irá cadastrar tanto professores quanto alunos no sistema.
+
+	∘ Será possível aplicar os métodos CRUD para ambas as tabelas.
